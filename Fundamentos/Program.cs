@@ -1,6 +1,7 @@
 ﻿using Fundamentos.ApresentarDados;
 using Fundamentos.EntradaDados;
 using Fundamentos.EstruturaCondicional;
+using Fundamentos.LacoRepeticao;
 
 //ApresentarDados01 executor = new ApresentarDados01();
 //executor.Executar();
@@ -17,5 +18,8 @@ using Fundamentos.EstruturaCondicional;
 //EstruturaCondicionalOu executor = new EstruturaCondicionalOu();
 //executor.Executar();
 
-EstruturaCondicionalAvancada executor = new EstruturaCondicionalAvancada();
+//EstruturaCondicionalAvancada executor = new EstruturaCondicionalAvancada();
+//executor.Executar();
+
+LacoRepeticaoWhile executor = new LacoRepeticaoWhile();
 executor.Executar();
