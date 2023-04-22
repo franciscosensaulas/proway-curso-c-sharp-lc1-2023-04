@@ -28,9 +28,11 @@ namespace Fundamentos.LacoRepeticao
                     Exemplo03();
                 else if(opcaoDesejada != 8001)
                     Console.WriteLine("Opção inválida");
+
                 Console.WriteLine("Press any key to continue...");
                 Console.ReadKey();
                 Console.Clear();
+                // Link do Miro com os exemplos do prof Francisco https://bit.ly/3nRV19f
             }
         }
 
