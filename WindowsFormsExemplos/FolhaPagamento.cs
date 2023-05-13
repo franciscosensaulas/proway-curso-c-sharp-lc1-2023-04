@@ -6,6 +6,7 @@
         public string NomeColaborador;
         public double ValorHora;
         public int QuantidadeHoras;
+        public int ValorEnsino;
 
         private const double AliquotaInss14Porcento = 0.14;
         private const double AliquotaInss12Porcento = 0.12;
