@@ -316,6 +316,7 @@
             buttonCancelar.TabIndex = 23;
             buttonCancelar.Text = "Cancelar";
             buttonCancelar.UseVisualStyleBackColor = true;
+            buttonCancelar.Click += buttonCancelar_Click;
             // 
             // buttonApagar
             // 
