@@ -28,175 +28,187 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelNome = new System.Windows.Forms.Label();
-            this.labelQuantidade = new System.Windows.Forms.Label();
-            this.labelPrecoUnitario = new System.Windows.Forms.Label();
-            this.labelListaProdutos = new System.Windows.Forms.Label();
-            this.buttonSalvar = new System.Windows.Forms.Button();
-            this.textBoxPrecoUnitario = new System.Windows.Forms.TextBox();
-            this.textBoxQuantidade = new System.Windows.Forms.TextBox();
-            this.textBoxNome = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPrecoUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPreço = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonApagar = new System.Windows.Forms.Button();
-            this.buttonEditar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
+            labelNome = new Label();
+            labelQuantidade = new Label();
+            labelPrecoUnitario = new Label();
+            labelListaProdutos = new Label();
+            buttonSalvar = new Button();
+            textBoxPrecoUnitario = new TextBox();
+            textBoxQuantidade = new TextBox();
+            textBoxNome = new TextBox();
+            dataGridView1 = new DataGridView();
+            buttonApagar = new Button();
+            buttonEditar = new Button();
+            ColumnPreço = new DataGridViewTextBoxColumn();
+            ColumnPrecoUnitario = new DataGridViewTextBoxColumn();
+            ColumnQuantidade = new DataGridViewTextBoxColumn();
+            ColumnNome = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
             // 
             // labelNome
             // 
-            this.labelNome.AutoSize = true;
-            this.labelNome.Location = new System.Drawing.Point(447, 9);
-            this.labelNome.Name = "labelNome";
-            this.labelNome.Size = new System.Drawing.Size(40, 15);
-            this.labelNome.TabIndex = 0;
-            this.labelNome.Text = "Nome";
+            labelNome.AutoSize = true;
+            labelNome.Location = new Point(511, 12);
+            labelNome.Name = "labelNome";
+            labelNome.Size = new Size(50, 20);
+            labelNome.TabIndex = 0;
+            labelNome.Text = "Nome";
             // 
             // labelQuantidade
             // 
-            this.labelQuantidade.AutoSize = true;
-            this.labelQuantidade.Location = new System.Drawing.Point(447, 53);
-            this.labelQuantidade.Name = "labelQuantidade";
-            this.labelQuantidade.Size = new System.Drawing.Size(69, 15);
-            this.labelQuantidade.TabIndex = 1;
-            this.labelQuantidade.Text = "Quantidade";
+            labelQuantidade.AutoSize = true;
+            labelQuantidade.Location = new Point(511, 71);
+            labelQuantidade.Name = "labelQuantidade";
+            labelQuantidade.Size = new Size(87, 20);
+            labelQuantidade.TabIndex = 1;
+            labelQuantidade.Text = "Quantidade";
             // 
             // labelPrecoUnitario
             // 
-            this.labelPrecoUnitario.AutoSize = true;
-            this.labelPrecoUnitario.Location = new System.Drawing.Point(447, 97);
-            this.labelPrecoUnitario.Name = "labelPrecoUnitario";
-            this.labelPrecoUnitario.Size = new System.Drawing.Size(82, 15);
-            this.labelPrecoUnitario.TabIndex = 2;
-            this.labelPrecoUnitario.Text = "Preço Unitário";
+            labelPrecoUnitario.AutoSize = true;
+            labelPrecoUnitario.Location = new Point(511, 129);
+            labelPrecoUnitario.Name = "labelPrecoUnitario";
+            labelPrecoUnitario.Size = new Size(103, 20);
+            labelPrecoUnitario.TabIndex = 2;
+            labelPrecoUnitario.Text = "Preço Unitário";
             // 
             // labelListaProdutos
             // 
-            this.labelListaProdutos.AutoSize = true;
-            this.labelListaProdutos.Location = new System.Drawing.Point(12, 9);
-            this.labelListaProdutos.Name = "labelListaProdutos";
-            this.labelListaProdutos.Size = new System.Drawing.Size(82, 15);
-            this.labelListaProdutos.TabIndex = 3;
-            this.labelListaProdutos.Text = "Lista Produtos";
+            labelListaProdutos.AutoSize = true;
+            labelListaProdutos.Location = new Point(14, 12);
+            labelListaProdutos.Name = "labelListaProdutos";
+            labelListaProdutos.Size = new Size(102, 20);
+            labelListaProdutos.TabIndex = 3;
+            labelListaProdutos.Text = "Lista Produtos";
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(713, 144);
-            this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
-            this.buttonSalvar.TabIndex = 4;
-            this.buttonSalvar.Text = "Salvar";
-            this.buttonSalvar.UseVisualStyleBackColor = true;
-            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
+            buttonSalvar.Location = new Point(815, 192);
+            buttonSalvar.Margin = new Padding(3, 4, 3, 4);
+            buttonSalvar.Name = "buttonSalvar";
+            buttonSalvar.Size = new Size(86, 31);
+            buttonSalvar.TabIndex = 4;
+            buttonSalvar.Text = "Salvar";
+            buttonSalvar.UseVisualStyleBackColor = true;
+            buttonSalvar.Click += buttonSalvar_Click;
             // 
             // textBoxPrecoUnitario
             // 
-            this.textBoxPrecoUnitario.Location = new System.Drawing.Point(447, 115);
-            this.textBoxPrecoUnitario.Name = "textBoxPrecoUnitario";
-            this.textBoxPrecoUnitario.Size = new System.Drawing.Size(341, 23);
-            this.textBoxPrecoUnitario.TabIndex = 3;
+            textBoxPrecoUnitario.Location = new Point(511, 153);
+            textBoxPrecoUnitario.Margin = new Padding(3, 4, 3, 4);
+            textBoxPrecoUnitario.Name = "textBoxPrecoUnitario";
+            textBoxPrecoUnitario.Size = new Size(389, 27);
+            textBoxPrecoUnitario.TabIndex = 3;
             // 
             // textBoxQuantidade
             // 
-            this.textBoxQuantidade.Location = new System.Drawing.Point(447, 71);
-            this.textBoxQuantidade.Name = "textBoxQuantidade";
-            this.textBoxQuantidade.Size = new System.Drawing.Size(341, 23);
-            this.textBoxQuantidade.TabIndex = 2;
+            textBoxQuantidade.Location = new Point(511, 95);
+            textBoxQuantidade.Margin = new Padding(3, 4, 3, 4);
+            textBoxQuantidade.Name = "textBoxQuantidade";
+            textBoxQuantidade.Size = new Size(389, 27);
+            textBoxQuantidade.TabIndex = 2;
             // 
             // textBoxNome
             // 
-            this.textBoxNome.Location = new System.Drawing.Point(447, 27);
-            this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(341, 23);
-            this.textBoxNome.TabIndex = 1;
+            textBoxNome.Location = new Point(511, 36);
+            textBoxNome.Margin = new Padding(3, 4, 3, 4);
+            textBoxNome.Name = "textBoxNome";
+            textBoxNome.Size = new Size(389, 27);
+            textBoxNome.TabIndex = 1;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnNome,
-            this.ColumnQuantidade,
-            this.ColumnPrecoUnitario,
-            this.ColumnPreço});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 53);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(429, 395);
-            this.dataGridView1.TabIndex = 8;
-            // 
-            // ColumnNome
-            // 
-            this.ColumnNome.HeaderText = "Nome";
-            this.ColumnNome.Name = "ColumnNome";
-            this.ColumnNome.ReadOnly = true;
-            // 
-            // ColumnQuantidade
-            // 
-            this.ColumnQuantidade.HeaderText = "Quantidade";
-            this.ColumnQuantidade.Name = "ColumnQuantidade";
-            this.ColumnQuantidade.ReadOnly = true;
-            // 
-            // ColumnPrecoUnitario
-            // 
-            this.ColumnPrecoUnitario.HeaderText = "Preço Unitário";
-            this.ColumnPrecoUnitario.Name = "ColumnPrecoUnitario";
-            this.ColumnPrecoUnitario.ReadOnly = true;
-            // 
-            // ColumnPreço
-            // 
-            this.ColumnPreço.HeaderText = "Preço";
-            this.ColumnPreço.Name = "ColumnPreço";
-            this.ColumnPreço.ReadOnly = true;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColumnNome, ColumnQuantidade, ColumnPrecoUnitario, ColumnPreço });
+            dataGridView1.Location = new Point(14, 71);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(490, 527);
+            dataGridView1.TabIndex = 8;
             // 
             // buttonApagar
             // 
-            this.buttonApagar.Location = new System.Drawing.Point(366, 19);
-            this.buttonApagar.Name = "buttonApagar";
-            this.buttonApagar.Size = new System.Drawing.Size(75, 23);
-            this.buttonApagar.TabIndex = 9;
-            this.buttonApagar.Text = "Apagar";
-            this.buttonApagar.UseVisualStyleBackColor = true;
-            this.buttonApagar.Click += new System.EventHandler(this.buttonApagar_Click);
+            buttonApagar.Location = new Point(418, 25);
+            buttonApagar.Margin = new Padding(3, 4, 3, 4);
+            buttonApagar.Name = "buttonApagar";
+            buttonApagar.Size = new Size(86, 31);
+            buttonApagar.TabIndex = 9;
+            buttonApagar.Text = "Apagar";
+            buttonApagar.UseVisualStyleBackColor = true;
+            buttonApagar.Click += buttonApagar_Click;
             // 
             // buttonEditar
             // 
-            this.buttonEditar.Location = new System.Drawing.Point(285, 19);
-            this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Size = new System.Drawing.Size(75, 23);
-            this.buttonEditar.TabIndex = 10;
-            this.buttonEditar.Text = "Editar";
-            this.buttonEditar.UseVisualStyleBackColor = true;
-            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
+            buttonEditar.Location = new Point(326, 25);
+            buttonEditar.Margin = new Padding(3, 4, 3, 4);
+            buttonEditar.Name = "buttonEditar";
+            buttonEditar.Size = new Size(86, 31);
+            buttonEditar.TabIndex = 10;
+            buttonEditar.Text = "Editar";
+            buttonEditar.UseVisualStyleBackColor = true;
+            buttonEditar.Click += buttonEditar_Click;
+            // 
+            // ColumnPreço
+            // 
+            ColumnPreço.HeaderText = "Preço";
+            ColumnPreço.MinimumWidth = 6;
+            ColumnPreço.Name = "ColumnPreço";
+            ColumnPreço.ReadOnly = true;
+            ColumnPreço.Width = 125;
+            // 
+            // ColumnPrecoUnitario
+            // 
+            ColumnPrecoUnitario.HeaderText = "Preço Unitário";
+            ColumnPrecoUnitario.MinimumWidth = 6;
+            ColumnPrecoUnitario.Name = "ColumnPrecoUnitario";
+            ColumnPrecoUnitario.ReadOnly = true;
+            ColumnPrecoUnitario.Width = 125;
+            // 
+            // ColumnQuantidade
+            // 
+            ColumnQuantidade.HeaderText = "Quantidade";
+            ColumnQuantidade.MinimumWidth = 6;
+            ColumnQuantidade.Name = "ColumnQuantidade";
+            ColumnQuantidade.ReadOnly = true;
+            ColumnQuantidade.Width = 125;
+            // 
+            // ColumnNome
+            // 
+            ColumnNome.HeaderText = "Nome";
+            ColumnNome.MinimumWidth = 6;
+            ColumnNome.Name = "ColumnNome";
+            ColumnNome.ReadOnly = true;
+            ColumnNome.Width = 125;
             // 
             // ProdutoCadastroSimplificadoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.buttonEditar);
-            this.Controls.Add(this.buttonApagar);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBoxNome);
-            this.Controls.Add(this.textBoxQuantidade);
-            this.Controls.Add(this.textBoxPrecoUnitario);
-            this.Controls.Add(this.buttonSalvar);
-            this.Controls.Add(this.labelListaProdutos);
-            this.Controls.Add(this.labelPrecoUnitario);
-            this.Controls.Add(this.labelQuantidade);
-            this.Controls.Add(this.labelNome);
-            this.Name = "ProdutoCadastroSimplificadoForm";
-            this.Text = "ProdutoCadastroSimplificadoForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(914, 600);
+            Controls.Add(buttonEditar);
+            Controls.Add(buttonApagar);
+            Controls.Add(dataGridView1);
+            Controls.Add(textBoxNome);
+            Controls.Add(textBoxQuantidade);
+            Controls.Add(textBoxPrecoUnitario);
+            Controls.Add(buttonSalvar);
+            Controls.Add(labelListaProdutos);
+            Controls.Add(labelPrecoUnitario);
+            Controls.Add(labelQuantidade);
+            Controls.Add(labelNome);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "ProdutoCadastroSimplificadoForm";
+            Text = "ProdutoCadastroSimplificadoForm";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -210,11 +222,11 @@
         private TextBox textBoxQuantidade;
         private TextBox textBoxNome;
         private DataGridView dataGridView1;
+        private Button buttonApagar;
+        private Button buttonEditar;
         private DataGridViewTextBoxColumn ColumnNome;
         private DataGridViewTextBoxColumn ColumnQuantidade;
         private DataGridViewTextBoxColumn ColumnPrecoUnitario;
         private DataGridViewTextBoxColumn ColumnPreço;
-        private Button buttonApagar;
-        private Button buttonEditar;
     }
 }
