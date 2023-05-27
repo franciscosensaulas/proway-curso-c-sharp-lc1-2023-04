@@ -59,6 +59,7 @@
             buttonApagar = new Button();
             buttonEditar = new Button();
             labelVitorias = new Label();
+            labelCodigoEditar = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownMinutos).BeginInit();
             SuspendLayout();
@@ -74,6 +75,7 @@
             dataGridView.ReadOnly = true;
             dataGridView.RowHeadersWidth = 51;
             dataGridView.RowTemplate.Height = 29;
+            dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.Size = new Size(643, 534);
             dataGridView.TabIndex = 0;
             // 
@@ -217,6 +219,7 @@
             buttonSalvar.TabIndex = 12;
             buttonSalvar.Text = "Salvar";
             buttonSalvar.UseVisualStyleBackColor = true;
+            buttonSalvar.Click += buttonSalvar_Click;
             // 
             // radioButtonFlopouSim
             // 
@@ -289,6 +292,8 @@
             textBoxPesquisa.Name = "textBoxPesquisa";
             textBoxPesquisa.Size = new Size(319, 27);
             textBoxPesquisa.TabIndex = 20;
+            textBoxPesquisa.TextChanged += textBoxPesquisa_TextChanged;
+            textBoxPesquisa.KeyDown += textBoxPesquisa_KeyDown;
             // 
             // labelQuantidadeValor
             // 
@@ -326,6 +331,7 @@
             buttonApagar.TabIndex = 24;
             buttonApagar.Text = "Apagar";
             buttonApagar.UseVisualStyleBackColor = true;
+            buttonApagar.Click += buttonApagar_Click;
             // 
             // buttonEditar
             // 
@@ -335,6 +341,7 @@
             buttonEditar.TabIndex = 25;
             buttonEditar.Text = "Editar";
             buttonEditar.UseVisualStyleBackColor = true;
+            buttonEditar.Click += buttonEditar_Click;
             // 
             // labelVitorias
             // 
@@ -345,11 +352,21 @@
             labelVitorias.TabIndex = 26;
             labelVitorias.Text = "Vitórias";
             // 
+            // labelCodigoEditar
+            // 
+            labelCodigoEditar.AutoSize = true;
+            labelCodigoEditar.Location = new Point(882, 9);
+            labelCodigoEditar.Name = "labelCodigoEditar";
+            labelCodigoEditar.Size = new Size(0, 20);
+            labelCodigoEditar.TabIndex = 27;
+            labelCodigoEditar.Visible = false;
+            // 
             // FilmeCadastroForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1320, 677);
+            Controls.Add(labelCodigoEditar);
             Controls.Add(labelVitorias);
             Controls.Add(buttonEditar);
             Controls.Add(buttonApagar);
@@ -379,6 +396,7 @@
             Controls.Add(dataGridView);
             Name = "FilmeCadastroForm";
             Text = "FilmeCadastroForm";
+            Load += FilmeCadastroForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownMinutos).EndInit();
             ResumeLayout(false);
@@ -418,5 +436,6 @@
         private DataGridViewTextBoxColumn ColumnNome;
         private DataGridViewTextBoxColumn ColumnCategoria;
         private DataGridViewTextBoxColumn ColumnDuracao;
+        private Label labelCodigoEditar;
     }
 }

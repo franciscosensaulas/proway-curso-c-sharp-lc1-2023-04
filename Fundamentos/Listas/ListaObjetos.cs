@@ -11,7 +11,7 @@ namespace Fundamentos.Listas
     {
         public void Executar()
         {
-            List<Filme> filmes = new List<Filme>();
+            var filmes = new List<Filme>();
 
             Filme dragonBallEvolution = new Filme();
             dragonBallEvolution.Nome = "Dragon Ball Evolution";

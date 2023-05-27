@@ -20,9 +20,7 @@ namespace Fundamentos.Listas
             // Criando uma lista(vetor) de string
             List<string> nomes = new List<string>();
             nomes.Add("Fabiana"); // CRUD => CREATE
-            nomes.Add("Joana");
             nomes.Add("Uélington");
-            nomes.Add("Manuell");
             nomes.Add("Robinson");
 
             Console.WriteLine("Nomes: ");
@@ -53,11 +51,16 @@ namespace Fundamentos.Listas
             numeros.Add(8);
             numeros.Add(10);
 
+            List<int> numerosAux = new List<int>
+            {
+                1, 7, 2, 3, 8, 10
+            };
+
             int somaComFor = 0;
-            for(int i = 0; i < numeros.Count; i += 1)
+            for (int i = 0; i < numeros.Count; i += 1)
                 somaComFor = somaComFor + numeros[i];
 
-            for(int i = 0; i < numeros.Count; i += 1)
+            for (int i = 0; i < numeros.Count; i += 1)
                 Console.WriteLine($"Posição {i}: {numeros[i]}");
 
             Console.WriteLine("Soma: " + somaComFor);
