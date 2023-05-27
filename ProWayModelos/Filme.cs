@@ -1,4 +1,6 @@
-﻿namespace ProWayModelos
+﻿using System.ComponentModel;
+
+namespace ProWayModelos
 {
     public class Filme
     {
@@ -16,6 +18,9 @@
 
     public enum FilmeCategoria
     {
-
+        Acao,
+        Comedia,
+        Terror,
+        Suspense
     }
 }
