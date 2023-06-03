@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
+            ColumnId = new DataGridViewTextBoxColumn();
             ColumnNome = new DataGridViewTextBoxColumn();
             ColumnQuantidade = new DataGridViewTextBoxColumn();
             ColumnPrecoUnitario = new DataGridViewTextBoxColumn();
@@ -51,16 +52,24 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColumnNome, ColumnQuantidade, ColumnPrecoUnitario, ColumnPreço });
-            dataGridView1.Location = new Point(61, 111);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColumnId, ColumnNome, ColumnQuantidade, ColumnPrecoUnitario, ColumnPreço });
+            dataGridView1.Location = new Point(12, 111);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(490, 527);
+            dataGridView1.Size = new Size(758, 527);
             dataGridView1.TabIndex = 19;
+            // 
+            // ColumnId
+            // 
+            ColumnId.HeaderText = "Código";
+            ColumnId.MinimumWidth = 6;
+            ColumnId.Name = "ColumnId";
+            ColumnId.ReadOnly = true;
+            ColumnId.Width = 125;
             // 
             // ColumnNome
             // 
@@ -96,7 +105,7 @@
             // 
             // textBoxNome
             // 
-            textBoxNome.Location = new Point(558, 76);
+            textBoxNome.Location = new Point(800, 69);
             textBoxNome.Margin = new Padding(3, 4, 3, 4);
             textBoxNome.Name = "textBoxNome";
             textBoxNome.Size = new Size(389, 27);
@@ -104,7 +113,7 @@
             // 
             // textBoxQuantidade
             // 
-            textBoxQuantidade.Location = new Point(558, 135);
+            textBoxQuantidade.Location = new Point(800, 128);
             textBoxQuantidade.Margin = new Padding(3, 4, 3, 4);
             textBoxQuantidade.Name = "textBoxQuantidade";
             textBoxQuantidade.Size = new Size(389, 27);
@@ -112,7 +121,7 @@
             // 
             // textBoxPrecoUnitario
             // 
-            textBoxPrecoUnitario.Location = new Point(558, 193);
+            textBoxPrecoUnitario.Location = new Point(800, 186);
             textBoxPrecoUnitario.Margin = new Padding(3, 4, 3, 4);
             textBoxPrecoUnitario.Name = "textBoxPrecoUnitario";
             textBoxPrecoUnitario.Size = new Size(389, 27);
@@ -120,12 +129,16 @@
             // 
             // buttonSalvar
             // 
-            buttonSalvar.Location = new Point(862, 232);
+            buttonSalvar.BackgroundImageLayout = ImageLayout.None;
+            buttonSalvar.Image = Properties.Resources.disk;
+            buttonSalvar.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonSalvar.Location = new Point(1041, 225);
             buttonSalvar.Margin = new Padding(3, 4, 3, 4);
             buttonSalvar.Name = "buttonSalvar";
-            buttonSalvar.Size = new Size(86, 31);
+            buttonSalvar.Size = new Size(149, 70);
             buttonSalvar.TabIndex = 18;
             buttonSalvar.Text = "Salvar";
+            buttonSalvar.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonSalvar.UseVisualStyleBackColor = true;
             buttonSalvar.Click += buttonSalvar_Click;
             // 
@@ -141,7 +154,7 @@
             // labelPrecoUnitario
             // 
             labelPrecoUnitario.AutoSize = true;
-            labelPrecoUnitario.Location = new Point(558, 169);
+            labelPrecoUnitario.Location = new Point(800, 162);
             labelPrecoUnitario.Name = "labelPrecoUnitario";
             labelPrecoUnitario.Size = new Size(103, 20);
             labelPrecoUnitario.TabIndex = 15;
@@ -150,7 +163,7 @@
             // labelQuantidade
             // 
             labelQuantidade.AutoSize = true;
-            labelQuantidade.Location = new Point(558, 111);
+            labelQuantidade.Location = new Point(800, 104);
             labelQuantidade.Name = "labelQuantidade";
             labelQuantidade.Size = new Size(87, 20);
             labelQuantidade.TabIndex = 13;
@@ -159,7 +172,7 @@
             // labelNome
             // 
             labelNome.AutoSize = true;
-            labelNome.Location = new Point(558, 52);
+            labelNome.Location = new Point(800, 45);
             labelNome.Name = "labelNome";
             labelNome.Size = new Size(50, 20);
             labelNome.TabIndex = 11;
@@ -184,12 +197,14 @@
             buttonApagar.TabIndex = 20;
             buttonApagar.Text = "Apagar";
             buttonApagar.UseVisualStyleBackColor = true;
+            buttonApagar.Click += buttonApagar_Click;
             // 
             // ProdutoCadastroSimplicadoBancoDadosForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1009, 690);
+            BackgroundImage = Properties.Resources.plano_de_fundo;
+            ClientSize = new Size(1233, 690);
             Controls.Add(dataGridView1);
             Controls.Add(textBoxNome);
             Controls.Add(textBoxQuantidade);
@@ -203,6 +218,7 @@
             Controls.Add(buttonApagar);
             Name = "ProdutoCadastroSimplicadoBancoDadosForm";
             Text = "ProdutoCadastroSimplicadoBancoDadosForm";
+            Load += ProdutoCadastroSimplicadoBancoDadosForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -211,10 +227,6 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn ColumnNome;
-        private DataGridViewTextBoxColumn ColumnQuantidade;
-        private DataGridViewTextBoxColumn ColumnPrecoUnitario;
-        private DataGridViewTextBoxColumn ColumnPreço;
         private TextBox textBoxNome;
         private TextBox textBoxQuantidade;
         private TextBox textBoxPrecoUnitario;
@@ -225,5 +237,10 @@
         private Label labelNome;
         private Button buttonEditar;
         private Button buttonApagar;
+        private DataGridViewTextBoxColumn ColumnId;
+        private DataGridViewTextBoxColumn ColumnNome;
+        private DataGridViewTextBoxColumn ColumnQuantidade;
+        private DataGridViewTextBoxColumn ColumnPrecoUnitario;
+        private DataGridViewTextBoxColumn ColumnPreço;
     }
 }
