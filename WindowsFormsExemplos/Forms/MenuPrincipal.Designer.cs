@@ -31,6 +31,7 @@
             buttonFolhaPagamento = new Button();
             buttonCadastroSimplificadoProduto = new Button();
             buttonCadastroFilmes = new Button();
+            buttonCadastroSimplificadoProdutoBancoDados = new Button();
             SuspendLayout();
             // 
             // buttonFolhaPagamento
@@ -65,11 +66,22 @@
             buttonCadastroFilmes.UseVisualStyleBackColor = true;
             buttonCadastroFilmes.Click += buttonCadastroFilmes_Click;
             // 
+            // buttonCadastroSimplificadoProdutoBancoDados
+            // 
+            buttonCadastroSimplificadoProdutoBancoDados.Location = new Point(542, 16);
+            buttonCadastroSimplificadoProdutoBancoDados.Name = "buttonCadastroSimplificadoProdutoBancoDados";
+            buttonCadastroSimplificadoProdutoBancoDados.Size = new Size(171, 180);
+            buttonCadastroSimplificadoProdutoBancoDados.TabIndex = 3;
+            buttonCadastroSimplificadoProdutoBancoDados.Text = "Cadastro Simplificado Produto Bando Dados";
+            buttonCadastroSimplificadoProdutoBancoDados.UseVisualStyleBackColor = true;
+            buttonCadastroSimplificadoProdutoBancoDados.Click += buttonCadastroSimplificadoProdutoBancoDados_Click;
+            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 600);
+            Controls.Add(buttonCadastroSimplificadoProdutoBancoDados);
             Controls.Add(buttonCadastroFilmes);
             Controls.Add(buttonCadastroSimplificadoProduto);
             Controls.Add(buttonFolhaPagamento);
@@ -85,5 +97,6 @@
         private Button buttonFolhaPagamento;
         private Button buttonCadastroSimplificadoProduto;
         private Button buttonCadastroFilmes;
+        private Button buttonCadastroSimplificadoProdutoBancoDados;
     }
 }
