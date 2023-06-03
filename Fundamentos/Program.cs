@@ -6,6 +6,7 @@ using Fundamentos.VetorComFor;
 using Fundamentos.Vetores;
 using Fundamentos.OrientacaoObjetos;
 using Fundamentos.Listas;
+using Fundamentos.BancoDados;
 
 //ApresentarDados01 executor = new ApresentarDados01();
 //executor.Executar();
@@ -31,8 +32,11 @@ using Fundamentos.Listas;
 //ExemploVetorComFor executor = new ExemploVetorComFor();
 //executor.Executar();
 
-ListaObjetos executar = new ListaObjetos();
-executar.Executar();
+//ListaObjetos executar = new ListaObjetos();
+//executar.Executar();
 
 //ListaColaboradores executar = new ListaColaboradores();
 //executar.CalcularFolhasPagamento();
+
+BancoDadosExemplo01 executor = new BancoDadosExemplo01();
+executor.Executar();

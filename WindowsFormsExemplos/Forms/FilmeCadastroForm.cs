@@ -14,9 +14,9 @@ namespace WindowsFormsExemplos.Forms
             // /home/moc/Desktop/filmes.json
             // /Users/moc/Desktop/filmes.json
             // C:\Users\moc\Desktop\filmes.json
-            CaminhoArquivoJsonFilmesDesktop = 
-                Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + 
-                Path.DirectorySeparatorChar + 
+            CaminhoArquivoJsonFilmesDesktop =
+                Environment.GetFolderPath(Environment.SpecialFolder.Desktop) +
+                Path.DirectorySeparatorChar +
                 "filmes.json";
             InitializeComponent();
         }
@@ -75,14 +75,15 @@ namespace WindowsFormsExemplos.Forms
             var dataLancamento = dateTimePickerDataLancamento.Value;
 
 
-            if(dataLancamento >= DateTime.Today) {
+            if (dataLancamento >= DateTime.Today)
+            {
                 MessageBox.Show("Data de lançamento deve ser menor que data atual");
                 return;
             }
 
             // 
 
-            if(comboBoxCategoria.SelectedIndex == -1)
+            if (comboBoxCategoria.SelectedIndex == -1)
             {
                 MessageBox.Show("Escolha uma categoria");
                 return;
