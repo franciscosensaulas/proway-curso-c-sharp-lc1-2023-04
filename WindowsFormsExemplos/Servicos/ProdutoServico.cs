@@ -15,5 +15,14 @@ namespace WindowsFormsExemplos.Servicos
             var produtoRepositorio = new ProdutoRepositorio();
             produtoRepositorio.Cadastrar(nome, precoUnitario, quantidade);
         }
+
+        public List<Produto> ObterTodos()
+        {
+            // Obter a lista de produtos da tabela de produtos
+            var produtoRepositorio = new ProdutoRepositorio();
+            var produtos = produtoRepositorio.ObterTodos();
+            // Retornar a lista de produtos
+            return produtos;
+        }
     }
 }

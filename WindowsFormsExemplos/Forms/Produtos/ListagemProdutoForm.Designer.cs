@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            buttonEditar = new Button();
-            buttonApagar = new Button();
             ColumnId = new DataGridViewTextBoxColumn();
             ColumnNome = new DataGridViewTextBoxColumn();
             ColumnQuantidade = new DataGridViewTextBoxColumn();
             ColumnPrecoUnitario = new DataGridViewTextBoxColumn();
             ColumnPreço = new DataGridViewTextBoxColumn();
+            buttonEditar = new Button();
+            buttonApagar = new Button();
             buttonCadastrar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -55,26 +55,6 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(1047, 579);
             dataGridView1.TabIndex = 20;
-            // 
-            // buttonEditar
-            // 
-            buttonEditar.Location = new Point(798, 13);
-            buttonEditar.Margin = new Padding(3, 4, 3, 4);
-            buttonEditar.Name = "buttonEditar";
-            buttonEditar.Size = new Size(86, 31);
-            buttonEditar.TabIndex = 23;
-            buttonEditar.Text = "Editar";
-            buttonEditar.UseVisualStyleBackColor = true;
-            // 
-            // buttonApagar
-            // 
-            buttonApagar.Location = new Point(890, 13);
-            buttonApagar.Margin = new Padding(3, 4, 3, 4);
-            buttonApagar.Name = "buttonApagar";
-            buttonApagar.Size = new Size(86, 31);
-            buttonApagar.TabIndex = 22;
-            buttonApagar.Text = "Apagar";
-            buttonApagar.UseVisualStyleBackColor = true;
             // 
             // ColumnId
             // 
@@ -116,6 +96,27 @@
             ColumnPreço.ReadOnly = true;
             ColumnPreço.Width = 125;
             // 
+            // buttonEditar
+            // 
+            buttonEditar.Location = new Point(798, 13);
+            buttonEditar.Margin = new Padding(3, 4, 3, 4);
+            buttonEditar.Name = "buttonEditar";
+            buttonEditar.Size = new Size(86, 31);
+            buttonEditar.TabIndex = 23;
+            buttonEditar.Text = "Editar";
+            buttonEditar.UseVisualStyleBackColor = true;
+            // 
+            // buttonApagar
+            // 
+            buttonApagar.Location = new Point(890, 13);
+            buttonApagar.Margin = new Padding(3, 4, 3, 4);
+            buttonApagar.Name = "buttonApagar";
+            buttonApagar.Size = new Size(86, 31);
+            buttonApagar.TabIndex = 22;
+            buttonApagar.Text = "Apagar";
+            buttonApagar.UseVisualStyleBackColor = true;
+            buttonApagar.Click += buttonApagar_Click;
+            // 
             // buttonCadastrar
             // 
             buttonCadastrar.Location = new Point(982, 13);
@@ -138,6 +139,7 @@
             Controls.Add(dataGridView1);
             Name = "ListagemProdutoForm";
             Text = "Lista de Produtos";
+            Load += ListagemProdutoForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
