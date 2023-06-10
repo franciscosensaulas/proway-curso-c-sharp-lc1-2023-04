@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsExemplos.Forms.Produtos;
 
 namespace WindowsFormsExemplos.Forms
 {
@@ -39,6 +40,12 @@ namespace WindowsFormsExemplos.Forms
         private void buttonCadastroSimplificadoProdutoBancoDados_Click(object sender, EventArgs e)
         {
             var form = new ProdutoCadastroSimplicadoBancoDadosForm();
+            form.ShowDialog();
+        }
+
+        private void buttonListaProdutos_Click(object sender, EventArgs e)
+        {
+            var form = new ListagemProdutoForm();
             form.ShowDialog();
         }
     }

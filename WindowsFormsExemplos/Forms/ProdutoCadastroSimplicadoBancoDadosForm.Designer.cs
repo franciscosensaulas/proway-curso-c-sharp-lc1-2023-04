@@ -187,6 +187,7 @@
             buttonEditar.TabIndex = 21;
             buttonEditar.Text = "Editar";
             buttonEditar.UseVisualStyleBackColor = true;
+            buttonEditar.Click += buttonEditar_Click;
             // 
             // buttonApagar
             // 

@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Globalization;
+using ProjetoBiblioteca.BancoDados;
 
 namespace WindowsFormsExemplos.Forms
 {
     public partial class ProdutoCadastroSimplicadoBancoDadosForm : Form
     {
+        private int idParaEditar = -1;
+
         public ProdutoCadastroSimplicadoBancoDadosForm()
         {
             InitializeComponent();
@@ -25,6 +28,44 @@ namespace WindowsFormsExemplos.Forms
             var quantidade = Convert.ToInt32(textBoxQuantidade.Text.Trim());
             var precoUnitario = Convert.ToDouble(textBoxPrecoUnitario.Text.Trim());
 
+            if (idParaEditar == -1)
+            {
+                Cadastrar(nome, quantidade, precoUnitario);
+            }
+            else
+            {
+                Editar(nome, quantidade, precoUnitario);
+            }
+            LimparCampos();
+            ListarProdutos();
+        }
+
+        private void LimparCampos()
+        {
+            textBoxNome.Clear();
+            textBoxQuantidade.Clear();
+            textBoxPrecoUnitario.Clear();
+            idParaEditar = -1;
+        }
+
+        private void Editar(string nome, int quantidade, double precoUnitario)
+        {
+            var comando = Conectar();
+            comando.CommandText = @"UPDATE produtos SET 
+                nome = @NOME, 
+                quantidade = @QUANTIDADE,
+                preco_unitario = @PRECO_UNITARIO
+                WHERE id = @ID";
+            comando.Parameters.AddWithValue("@NOME", nome);
+            comando.Parameters.AddWithValue("@PRECO_UNITARIO", precoUnitario);
+            comando.Parameters.AddWithValue("@QUANTIDADE", quantidade);
+            comando.Parameters.AddWithValue("@ID", idParaEditar);
+            comando.ExecuteNonQuery();
+            MessageBox.Show("Produto alterado com sucesso.");
+        }
+
+        private void Cadastrar(string nome, int quantidade, double precoUnitario)
+        {
             var comando = Conectar();
             comando.CommandText = @"INSERT INTO produtos (nome, preco_unitario, quantidade) 
 VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
@@ -35,7 +76,6 @@ VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
 
             comando.ExecuteNonQuery();
             MessageBox.Show("Produto cadastrado com sucesso");
-            ListarProdutos();
         }
 
         private void ListarProdutos()
@@ -67,13 +107,8 @@ VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
 
         private SqlCommand Conectar()
         {
-            var conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\moc\proway-curso-c-sharp-lc1-2023-04\WindowsFormsExemplos\BancoDados\WindowsFormsBancoDados.mdf;Integrated Security=True";
-            conexao.Open();
-
-            var comando = conexao.CreateCommand();
-
-            return comando;
+            var bancoDadosConexao = new BancoDadosConexao();
+            return bancoDadosConexao.Conectar();
         }
 
         private void ProdutoCadastroSimplicadoBancoDadosForm_Load(object sender, EventArgs e)
@@ -93,6 +128,35 @@ VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
 
             MessageBox.Show("Produto apagado com sucesso");
             ListarProdutos();
+        }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            var conexao = Conectar();
+            conexao.CommandText = "SELECT * FROM produtos WHERE id = @ID";
+
+            var linhaSelecionada = dataGridView1.SelectedRows[0];
+            var id = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+
+            conexao.Parameters.AddWithValue("@ID", id);
+
+            // Criar tabela em memória para resgatar os registros
+            var tabelaEmMemoria = new DataTable();
+            tabelaEmMemoria.Load(conexao.ExecuteReader());
+
+            // Obter dados do registro obtido no select realizado
+            var registro = tabelaEmMemoria.Rows[0];
+            var nome = registro["nome"].ToString();
+            var precoUnitario = Convert.ToDecimal(registro["preco_unitario"]);
+            var quantidade = Convert.ToInt32(registro["quantidade"]);
+
+            // Preencher campos para permitir editar o registro
+            textBoxNome.Text = nome;
+            textBoxQuantidade.Text = quantidade.ToString();
+            textBoxPrecoUnitario.Text = precoUnitario.ToString();
+            idParaEditar = id;
+            // Foco no campo do nome, para usuário poder alterar o nome, caso desejar
+            textBoxNome.Focus();
         }
     }
 }

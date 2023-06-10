@@ -14,6 +14,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\ProjetoBiblioteca\ProjetoBiblioteca.csproj" />
 	  <ProjectReference Include="..\ProWayModelos\ProWayModelos.csproj" />
 	</ItemGroup>
 
