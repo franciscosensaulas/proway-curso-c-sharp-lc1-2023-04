@@ -59,7 +59,19 @@ namespace WindowsFormsExemplos.Forms.Produtos
 
         private void buttonApagar_Click(object sender, EventArgs e)
         {
-            
+            // Obter a linha selecionada do dataGridView1
+            var linhaSelecionada = dataGridView1.SelectedRows[0];
+            // Obter o valor da primeira coluna(código=='id') da linha selecionada
+            var id = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+
+            // Instanciando um objeto da classe ProdutoServico
+            var produtoServico = new ProdutoServico();
+
+            // Chamar o método que irá realizar o delete
+            produtoServico.Apagar(id);
+
+            // Atualizar o dataGridView1 com a lista produtos da tabela de produtos
+            ListarProdutos();
         }
     }
 }

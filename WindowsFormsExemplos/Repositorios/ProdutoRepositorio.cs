@@ -33,6 +33,16 @@ VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
 
         public void Apagar(int id)
         {
+            // Abrir conexão
+            var bancoDadosConexao = new BancoDadosConexao();
+            var comando = bancoDadosConexao.Conectar();
+
+            // Definir o comando
+            comando.CommandText = "DELETE FROM produtos WHERE id = @ID";
+            comando.Parameters.AddWithValue("@ID", id);
+
+            // Executar o comando de apagar o registro
+            comando.ExecuteNonQuery();
         }
 
         public List<Produto> ObterTodos()

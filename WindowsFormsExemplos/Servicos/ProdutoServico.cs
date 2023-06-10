@@ -24,5 +24,13 @@ namespace WindowsFormsExemplos.Servicos
             // Retornar a lista de produtos
             return produtos;
         }
+
+        public void Apagar(int id)
+        {
+            // Instanciando um objeto da class ProdutoRepositorio
+            var produtoRepositorio = new ProdutoRepositorio();
+            // Chamar o método Apagar do ProdutoRepositorio(que irá executar o DELETE)
+            produtoRepositorio.Apagar(id);
+        }
     }
 }
