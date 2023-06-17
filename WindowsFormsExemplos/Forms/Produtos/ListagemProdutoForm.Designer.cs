@@ -37,6 +37,8 @@
             buttonEditar = new Button();
             buttonApagar = new Button();
             buttonCadastrar = new Button();
+            labelPesquisa = new Label();
+            textBoxPesquisa = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -105,6 +107,7 @@
             buttonEditar.TabIndex = 23;
             buttonEditar.Text = "Editar";
             buttonEditar.UseVisualStyleBackColor = true;
+            buttonEditar.Click += buttonEditar_Click;
             // 
             // buttonApagar
             // 
@@ -128,11 +131,30 @@
             buttonCadastrar.UseVisualStyleBackColor = true;
             buttonCadastrar.Click += buttonCadastrar_Click;
             // 
+            // labelPesquisa
+            // 
+            labelPesquisa.AutoSize = true;
+            labelPesquisa.Location = new Point(21, 18);
+            labelPesquisa.Name = "labelPesquisa";
+            labelPesquisa.Size = new Size(65, 20);
+            labelPesquisa.TabIndex = 25;
+            labelPesquisa.Text = "Pesquisa";
+            // 
+            // textBoxPesquisa
+            // 
+            textBoxPesquisa.Location = new Point(92, 15);
+            textBoxPesquisa.Name = "textBoxPesquisa";
+            textBoxPesquisa.Size = new Size(489, 27);
+            textBoxPesquisa.TabIndex = 26;
+            textBoxPesquisa.KeyDown += textBoxPesquisa_KeyDown;
+            // 
             // ListagemProdutoForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1093, 644);
+            Controls.Add(textBoxPesquisa);
+            Controls.Add(labelPesquisa);
             Controls.Add(buttonCadastrar);
             Controls.Add(buttonEditar);
             Controls.Add(buttonApagar);
@@ -142,6 +164,7 @@
             Load += ListagemProdutoForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -155,5 +178,7 @@
         private DataGridViewTextBoxColumn ColumnPrecoUnitario;
         private DataGridViewTextBoxColumn ColumnPreço;
         private Button buttonCadastrar;
+        private Label labelPesquisa;
+        private TextBox textBoxPesquisa;
     }
 }
