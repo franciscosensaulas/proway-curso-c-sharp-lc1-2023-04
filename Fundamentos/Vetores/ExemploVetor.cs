@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Fundamentos.Vetores
 {
-    internal class ExemploVetor
+    internal class ExemploVetor : Executor
     {
-        public void Executar()
+        public override void Executar()
         {
             ExemploProdutos();
         }

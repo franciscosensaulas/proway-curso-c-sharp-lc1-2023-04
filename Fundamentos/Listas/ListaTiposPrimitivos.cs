@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Fundamentos.Listas
 {
-    internal class ListaTiposPrimitivos
+    internal class ListaTiposPrimitivos : Executor
     {
-        public void Executar()
+        public override void Executar()
         {
             string[] nomesVetor = new string[5];
             nomesVetor[0] = "Fabiana";

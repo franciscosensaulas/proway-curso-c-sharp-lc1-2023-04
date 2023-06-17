@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Fundamentos.EstruturaCondicional
 {
-    internal class EstruturaCondicionalSimples
+    internal class EstruturaCondicionalSimples : Executor
     {
-        public void Executar()
+        public override void Executar()
         {
             int idade = 10;
             if (idade < 18)

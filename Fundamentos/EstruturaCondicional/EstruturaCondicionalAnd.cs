@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Fundamentos.EstruturaCondicional
 {
-    internal class EstruturaCondicionalAnd
+    internal class EstruturaCondicionalAnd : Executor
     {
-        public void Executar()
+        public override void Executar()
         {
             //double imc = peso / altura * altura;
             double peso = 128.00; double altura = 1.70;

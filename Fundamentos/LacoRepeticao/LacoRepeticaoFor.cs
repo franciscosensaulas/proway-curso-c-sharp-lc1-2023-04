@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Fundamentos.LacoRepeticao
 {
-    internal class LacoRepeticaoFor
+    internal class LacoRepeticaoFor : Executor
     {
         // Método público sem retorno e sem parâmetros
-        public void Executar()
+        public override void Executar()
         {
             //Exemplo01();
             ExemploRelogio();

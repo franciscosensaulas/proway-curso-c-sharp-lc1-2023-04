@@ -2,9 +2,9 @@
 
 namespace Fundamentos.EstruturaCondicional
 {
-    internal class EstruturaCondicionalAvancada
+    internal class EstruturaCondicionalAvancada : Executor
     {
-        public void Executar()
+        public override void Executar()
         {
             // INPUTS
             // byte 0..255, short -32768..32767, int -2bi..2bi e long

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Fundamentos.EstruturaCondicional
 {
-    internal class EstruturaCondicionalOu
+    internal class EstruturaCondicionalOu : Executor
     {
-        public void Executar()
+        public override void Executar()
         {
             // | pipeline
             // || ou 

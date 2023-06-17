@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Fundamentos.Listas
 {
-    internal class ListaObjetos
+    internal class ListaObjetos : Executor
     {
-        public void Executar()
+        public override void Executar()
         {
             var filmes = new List<Filme>();
 

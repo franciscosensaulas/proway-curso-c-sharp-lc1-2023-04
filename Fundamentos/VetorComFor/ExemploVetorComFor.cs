@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Fundamentos.VetorComFor
 {
-    internal class ExemploVetorComFor
+    internal class ExemploVetorComFor : Executor
     {
-        public void Executar()
+        public override void Executar()
         {
             ExemploProdutos();
         }

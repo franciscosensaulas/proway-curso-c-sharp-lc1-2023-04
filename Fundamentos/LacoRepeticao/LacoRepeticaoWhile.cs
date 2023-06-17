@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Fundamentos.LacoRepeticao
 {
-    internal class LacoRepeticaoWhile
+    internal class LacoRepeticaoWhile : Executor
     {
         // Método sem retorno, dica void
         // Método sem parâmetros, dica n tem variável dentro dos ()
-        public void Executar()
+        public override void Executar()
         {
             int opcaoDesejada = 0;
             while(opcaoDesejada != 8001)

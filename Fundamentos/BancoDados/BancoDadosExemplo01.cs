@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Fundamentos.BancoDados
 {
-    internal class BancoDadosExemplo01
+    internal class BancoDadosExemplo01 : Executor
     {
         private const string CadeiaConexaoBancoDados = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\moc\Desktop\BancoDados.mdf;Integrated Security=True;Connect Timeout=30";
 
-        public void Executar()
+        public override void Executar()
         {
             /*  CRUD
              *  Create: INSERT INTO nome_tabela (colunas) VALUES (valores);
