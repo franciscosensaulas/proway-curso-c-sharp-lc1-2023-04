@@ -44,6 +44,8 @@ namespace WindowsFormsExemplos.Forms.Clientes
             cliente.Endereco.Complemento = complemento;
 
             clienteServico.Cadastrar(cliente);
+
+            MessageBox.Show("Cliente cadastrado com sucesso");
         }
 
         private void maskedTextBoxCep_KeyDown(object sender, KeyEventArgs e)
