@@ -11,10 +11,16 @@ namespace WindowsFormsExemplos.Repositorios
 {
     public class ProdutoRepositorio
     {
+        private BancoDadosConexao bancoDadosConexao;
+
+        public ProdutoRepositorio()
+        {
+            bancoDadosConexao = new BancoDadosConexao();
+        }
+
         // CRUD
         public void Cadastrar(string nome, decimal precoUnitario, int quantidade)
         {
-            var bancoDadosConexao = new BancoDadosConexao();
             var comando = bancoDadosConexao.Conectar();
 
             comando.CommandText = @"INSERT INTO produtos (nome, preco_unitario, quantidade) 
@@ -29,7 +35,6 @@ VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
 
         public void Editar(int id, string nome, decimal precoUnitario, int quantidade)
         {
-            var bancoDadosConexao = new BancoDadosConexao();
             var comando = bancoDadosConexao.Conectar();
 
             comando.CommandText = @"UPDATE produtos SET 
@@ -47,8 +52,6 @@ VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
 
         public void Apagar(int id)
         {
-            // Abrir conexão
-            var bancoDadosConexao = new BancoDadosConexao();
             var comando = bancoDadosConexao.Conectar();
 
             // Definir o comando
@@ -62,8 +65,7 @@ VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
         public List<Produto> ObterTodos(string pesquisa)
         {
             var produtos = new List<Produto>();
-            // Abrir a conexão
-            var bancoDadosConexao = new BancoDadosConexao();
+            
             var comando = bancoDadosConexao.Conectar();
 
             // Executar o comando de SELECT
@@ -99,8 +101,6 @@ VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
 
         public Produto ObterPorId(int id)
         {
-            // Intanciando um objeto da classe BancoDadosConexao
-            var bancoDadosConexao = new BancoDadosConexao();
             // Abrir a conexão com o Banco de dados
             var comando = bancoDadosConexao.Conectar();
 
