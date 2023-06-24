@@ -28,6 +28,8 @@ namespace WindowsFormsExemplos.Forms.Produtos
             var formulario = new CadastroProdutoForm();
             formulario.Text = "Cadatrar Produto";
             formulario.ShowDialog();
+
+            ListarProdutos();
         }
 
         private void ListagemProdutoForm_Load(object sender, EventArgs e)

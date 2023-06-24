@@ -13,27 +13,29 @@ namespace WindowsFormsExemplos.Repositorios
     {
         private BancoDadosConexao bancoDadosConexao;
 
+        // Construtor: é executado quando ocorre um new da classe, ou seja,
+        // new ProdutoRepositorio() irá executar o contrutor
         public ProdutoRepositorio()
         {
             bancoDadosConexao = new BancoDadosConexao();
         }
 
         // CRUD
-        public void Cadastrar(string nome, decimal precoUnitario, int quantidade)
+        public void Cadastrar(Produto produto)
         {
             var comando = bancoDadosConexao.Conectar();
 
             comando.CommandText = @"INSERT INTO produtos (nome, preco_unitario, quantidade) 
 VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
 
-            comando.Parameters.AddWithValue("@NOME", nome);
-            comando.Parameters.AddWithValue("@PRECO_UNITARIO", precoUnitario);
-            comando.Parameters.AddWithValue("@QUANTIDADE", quantidade);
+            comando.Parameters.AddWithValue("@NOME", produto.Nome);
+            comando.Parameters.AddWithValue("@PRECO_UNITARIO", produto.PrecoUnitario);
+            comando.Parameters.AddWithValue("@QUANTIDADE", produto.Quantidade);
 
             comando.ExecuteNonQuery();
         }
 
-        public void Editar(int id, string nome, decimal precoUnitario, int quantidade)
+        public void Editar(Produto produto)
         {
             var comando = bancoDadosConexao.Conectar();
 
@@ -42,10 +44,10 @@ VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
                 preco_unitario = @PRECO_UNITARIO,
                 quantidade = @QUANTIDADE
             WHERE id = @ID";
-            comando.Parameters.AddWithValue("@NOME", nome);
-            comando.Parameters.AddWithValue("@PRECO_UNITARIO", precoUnitario);
-            comando.Parameters.AddWithValue("@QUANTIDADE", quantidade);
-            comando.Parameters.AddWithValue("@ID", id);
+            comando.Parameters.AddWithValue("@NOME", produto.Nome);
+            comando.Parameters.AddWithValue("@PRECO_UNITARIO", produto.PrecoUnitario);
+            comando.Parameters.AddWithValue("@QUANTIDADE", produto.Quantidade);
+            comando.Parameters.AddWithValue("@ID", produto.Id);
 
             comando.ExecuteNonQuery();
         }
@@ -81,15 +83,8 @@ VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
             {
                 // Obter o registro(consultado da tabela de produtos) da tabela em memória
                 var registro = tabelaEmMemoria.Rows[i];
-                
-                // Instanciar um objeto da classe Produto
-                var produto = new Produto();
 
-                // Preencher as propriedades do objeto do Produto
-                produto.Id = Convert.ToInt32(registro["id"]);
-                produto.Nome = registro["nome"].ToString();
-                produto.Quantidade = Convert.ToInt32(registro["quantidade"]);
-                produto.PrecoUnitario = Convert.ToDecimal(registro["preco_unitario"]);
+                var produto = ConstruirProdutoDoRegistro(registro);
 
                 // Adicionar o produto na lista de produtos
                 produtos.Add(produto);
@@ -114,8 +109,18 @@ VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
             // Pegar o primeiro registro da consulta
             var linha = tabelaEmMemoria.Rows[0];
 
+            var produto = ConstruirProdutoDoRegistro(linha);
+
+            // Retornar o objeto do produto preenchido com os dados
+            // do registro consultado.
+            return produto;
+        }
+
+        private Produto ConstruirProdutoDoRegistro(DataRow linha)
+        {
             // Instanciar o objeto de Produto
             var produto = new Produto();
+
             // Preencher as propriedades do produto com os
             // dados do primeiro registro
             produto.Id = Convert.ToInt32(linha["id"]);
@@ -123,8 +128,6 @@ VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
             produto.Quantidade = Convert.ToInt32(linha["quantidade"]);
             produto.PrecoUnitario = Convert.ToInt32(linha["preco_unitario"]);
 
-            // Retornar o objeto do produto preenchido com os dados
-            // do registro consultado.
             return produto;
         }
     }
@@ -135,5 +138,10 @@ VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
         public string Nome { get; set; }
         public decimal PrecoUnitario { get; set; }
         public int Quantidade { get; set; }
+        public string CodigoBarras { get; set; }
+        public DateTime DataVencimento { get; set; }
+        public DateTime DataCompra { get; set; }
+        public DateTime DataFabricacao { get; set; }
+        public string Categoria { get; set; }
     }
 }
