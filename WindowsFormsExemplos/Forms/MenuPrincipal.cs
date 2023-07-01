@@ -52,7 +52,7 @@ namespace WindowsFormsExemplos.Forms
 
         private void buttonListaClientes_Click(object sender, EventArgs e)
         {
-            var form = new CadastroClienteFrom();
+            var form = new ListagemClienteForm();
             form.ShowDialog();
         }
     }
