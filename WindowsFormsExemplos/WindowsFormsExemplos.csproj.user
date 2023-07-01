@@ -16,6 +16,12 @@
     <Compile Update="Forms\MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Pedidos\CadastroPedidoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Pedidos\ListagemPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\ProdutoCadastroSimplicadoBancoDadosForm.cs">
       <SubType>Form</SubType>
     </Compile>

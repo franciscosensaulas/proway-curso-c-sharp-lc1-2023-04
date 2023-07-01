@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsExemplos.BancoDados;
+using WindowsFormsExemplos.Modelos;
 
 namespace WindowsFormsExemplos.Repositorios
 {
@@ -130,18 +131,5 @@ VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
 
             return produto;
         }
-    }
-
-    public class Produto
-    {
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public decimal PrecoUnitario { get; set; }
-        public int Quantidade { get; set; }
-        public string CodigoBarras { get; set; }
-        public DateTime DataVencimento { get; set; }
-        public DateTime DataCompra { get; set; }
-        public DateTime DataFabricacao { get; set; }
-        public string Categoria { get; set; }
     }
 }
