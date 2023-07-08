@@ -127,7 +127,7 @@ VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
             produto.Id = Convert.ToInt32(linha["id"]);
             produto.Nome = linha["nome"].ToString();
             produto.Quantidade = Convert.ToInt32(linha["quantidade"]);
-            produto.PrecoUnitario = Convert.ToInt32(linha["preco_unitario"]);
+            produto.PrecoUnitario = Convert.ToDecimal(linha["preco_unitario"]);
 
             return produto;
         }

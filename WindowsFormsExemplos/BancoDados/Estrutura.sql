@@ -49,4 +49,7 @@ CREATE TABLE CARRINHO(
 	FOREIGN KEY(id_produto) REFERENCES produtos(id)
 );
 
+INSERT INTO CARRINHO (id_pedido, id_produto, quantidade) VALUES
+(14, 2, 10);
+
 ALTER TABLE PEDIDOS ADD STATUS INT NOT NULL;
