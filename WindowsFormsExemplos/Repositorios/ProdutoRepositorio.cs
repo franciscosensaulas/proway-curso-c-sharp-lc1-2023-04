@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsExemplos.BancoDados;
+using WindowsFormsExemplos.Modelos;
 
 namespace WindowsFormsExemplos.Repositorios
 {
@@ -126,22 +127,9 @@ VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
             produto.Id = Convert.ToInt32(linha["id"]);
             produto.Nome = linha["nome"].ToString();
             produto.Quantidade = Convert.ToInt32(linha["quantidade"]);
-            produto.PrecoUnitario = Convert.ToInt32(linha["preco_unitario"]);
+            produto.PrecoUnitario = Convert.ToDecimal(linha["preco_unitario"]);
 
             return produto;
         }
-    }
-
-    public class Produto
-    {
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public decimal PrecoUnitario { get; set; }
-        public int Quantidade { get; set; }
-        public string CodigoBarras { get; set; }
-        public DateTime DataVencimento { get; set; }
-        public DateTime DataCompra { get; set; }
-        public DateTime DataFabricacao { get; set; }
-        public string Categoria { get; set; }
     }
 }
